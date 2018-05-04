@@ -1,0 +1,14 @@
+{
+  "name": "mulwi/client-php",
+  "description": "Mulwi Search API Client for PHP",
+  "type": "library",
+  "homepage": "https://mulwi.com/",
+  "license": "MIT",
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Mulwi\\": "src"
+    }
+  }
+}
