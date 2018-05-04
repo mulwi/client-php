@@ -4,20 +4,36 @@ namespace Mulwi;
 
 class Context
 {
+    /**
+     * @var string
+     */
     private $appID;
 
-    private $appKey;
+    /**
+     * @var string
+     */
+    private $apiKey;
 
+    /**
+     * @var string
+     */
     private $endpoint;
 
-    public function __construct($appID, $appKey, $endpoint)
+    public function __construct($appID, $apiKey, $endpoint)
     {
         $this->appID = $appID;
-        $this->appKey = $appKey;
+        $this->apiKey = $apiKey;
         $this->endpoint = $endpoint;
     }
 
-
+    /**
+     * @param string $method
+     * @param string $path
+     * @param array|null $params
+     * @param array|null $data
+     * @return array
+     * @throws \Exception
+     */
     public function request($method, $path, $params = null, $data = null)
     {
         $url = $this->endpoint . $path;
@@ -36,9 +52,9 @@ class Context
         curl_setopt($ch, CURLOPT_URL, $url);
 
         $headers = [
-            'X-Application-Id'  => $this->appID,
-            'X-Application-Key' => $this->appKey,
-            'Content-type'      => 'application/json',
+            'X-Application-Id' => $this->appID,
+            'X-Application-Key' => $this->apiKey,
+            'Content-type' => 'application/json',
         ];
 
         $curlHeaders = [];
