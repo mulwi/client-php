@@ -3,7 +3,7 @@
   "description": "Mulwi Search API Client for PHP",
   "type": "library",
   "homepage": "https://mulwi.com/",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "require-dev": {
   },
